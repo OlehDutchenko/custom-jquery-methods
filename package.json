@@ -4,11 +4,7 @@
   "description": "Custom jQuery methods ($.fn)",
   "main": "index.js",
   "scripts": {
-    "render-node": "node ./tests/node-sass.js",
-    "render-gulp": "cd tests && gulp sass",
-    "compare": "cd tests && gulp compare-results",
-    "render": "npm run render-node && npm run render-gulp && npm run compare",
-    "test": "happiness \"./*.js\" \"./fns/**/*.js\" --verbose --fix | snazzy"
+    "test": "happiness \"./index.js\" \"./fn/**/*.js\" --verbose --fix | snazzy"
   },
   "repository": {
     "type": "git",
@@ -33,7 +29,14 @@
   },
   "homepage": "https://github.com/dutchenkoOleg/custom-jquery-methods#readme",
   "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "del": "^3.0.0",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-babel": "^7.0.0",
+    "gulp-jsdoc3": "^1.0.1",
+    "gulp-uglify": "^3.0.0",
     "happiness": "^10.0.2",
+    "jsdoc-simple-theme": "^1.1.0",
     "snazzy": "^7.0.0"
   }
 }

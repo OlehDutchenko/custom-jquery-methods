@@ -17,9 +17,6 @@ thumbs.db
 
 # Workflow
 .idea
-tmp/
-docs/
-tests/
+api-docs/
 examples/
 .travis.yml
-tests/gulpfile.js

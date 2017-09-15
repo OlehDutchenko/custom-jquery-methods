@@ -10,17 +10,10 @@ node_modules/
 
 # IDEA
 .idea/
-tests/results-gulp/
-tests/results-node/
-tests/results-steroids/
-
-# temp
-tmp/
 
 # fs
 .DS_Store
 thumbs.db
 
 # workflow
-docs/
-examples/dist/
+api-docs/
