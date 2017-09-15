@@ -15,7 +15,7 @@
 	/**
   * Check for the existence of an initialization key
   *
-  * @example <caption>Check in cycle `each`</caption>
+  * @example <caption>Check in cycle `.each()`</caption>
   * let initKey = 'my-key';
   * $('.my-elements').each((i, el) => {
   *     let $element = $(el);
@@ -56,14 +56,17 @@
   *
   * @example
   * let initKey = 'my-key';
-  * let $myEl = $('.my-element');
+  * let $myEl = $('.my-elements');
   * $myEl.removeInitedKey(initKey);
   *
   * @param {string} key - key name
+  * @returns {jQuery.<Element>} this
   * @memberOf $.fn
   * @sourceCode
   */
 	$.fn.removeInitedKey = function (key) {
-		$(this).data(key, null);
+		return this.each(function (index, el) {
+			$(el).data(key, null);
+		});
 	};
 })(window, window.jQuery);

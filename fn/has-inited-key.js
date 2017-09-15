@@ -27,8 +27,8 @@
 	 *
 	 * @example <caption>Check single</caption>
 	 * let initKey = 'my-key';
-	 * let $myEl = $('.my-elements');
-	 * if (!$element.hasInitedKey(initKey)) {
+	 * let $myEl = $('.my-element');
+	 * if (!$myEl.hasInitedKey(initKey)) {
 	 *     // process current element
 	 * }
 	 *
@@ -58,10 +58,13 @@
 	 * $myEl.removeInitedKey(initKey);
 	 *
 	 * @param {string} key - key name
+	 * @returns {jQuery.<Element>} this
 	 * @memberOf $.fn
 	 * @sourceCode
 	 */
 	$.fn.removeInitedKey = function (key) {
-		$(this).data(key, null);
+		return this.each((index, el) => {
+			$(el).data(key, null);
+		});
 	};
 })(window, window.jQuery);

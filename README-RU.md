@@ -28,7 +28,7 @@ yarn add custom-jquery-methods
 
 - [$.fn.addClassSiblingsRemove](#fnaddclasssiblingsremove-cssclass--custompath)
 - [$.fn.getMyElements](#fngetmyelements-datakey-selector--direction-notself)
-- [$.fn.hasInitedKey]()
+- [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
 - [$.fn.removeInitedKey]()
 
 ---
@@ -207,6 +207,56 @@ require('custom-jquery-methods/dist/has-inited-key.min');
 - [https://unpkg.com/custom-jquery-methods@latest/fn/has-inited-key.js](https://unpkg.com/custom-jquery-methods@latest/fn/has-inited-key.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.js](https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.min.js)
+
+
+
+
+
+---
+
+### $.fn.removeInitedKey (key)
+
+Удаление ключа инициализации в `.data()`.
+Метод является обратным действием для [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
+
+###### Параметры:
+
+Name | Type | Attributes | Default | Description
+--- | --- | --- | --- | ---
+`key` | `string` | | | имя ключа
+
+###### Возвращает:
+
+`boolean`
+
+###### Примеры:
+
+_example 1._ Проверка в цикле `.each()`
+
+```js
+let initKey = 'my-key';
+$('.my-elements').each((i, el) => {
+    let $element = $(el);
+    if ($element.hasInitedKey(initKey)) {
+        return true;
+    }
+    // process current element
+});
+```
+
+_example 2._ Проверка для одного элемента
+
+```js
+let initKey = 'my-key';
+let $myEl = $('.my-elements');
+if (!$myEl.hasInitedKey(initKey)) {
+    // process current element
+}
+```
+
+#### nodejs /  browser / download:
+
+Метод описан в том же файле что и [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey), соответственно, при подключении Вы получаете оба метода.
 
 
 
