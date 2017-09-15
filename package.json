@@ -1,0 +1,39 @@
+{
+  "name": "custom-jquery-methods",
+  "version": "0.0.1",
+  "description": "Custom jQuery methods ($.fn)",
+  "main": "index.js",
+  "scripts": {
+    "render-node": "node ./tests/node-sass.js",
+    "render-gulp": "cd tests && gulp sass",
+    "compare": "cd tests && gulp compare-results",
+    "render": "npm run render-node && npm run render-gulp && npm run compare",
+    "test": "happiness \"./*.js\" \"./fns/**/*.js\" --verbose --fix | snazzy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dutchenkoOleg/custom-jquery-methods.git"
+  },
+  "engines": {
+    "node": ">=6.3.1"
+  },
+  "keywords": [
+    "jquery",
+    "fn",
+    "prototype",
+    "plugins",
+    "methods",
+    "es6",
+    "webpack"
+  ],
+  "author": "Oleg Dutchenko <dutchenko.o.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dutchenkoOleg/custom-jquery-methods/issues"
+  },
+  "homepage": "https://github.com/dutchenkoOleg/custom-jquery-methods#readme",
+  "devDependencies": {
+    "happiness": "^10.0.2",
+    "snazzy": "^7.0.0"
+  }
+}

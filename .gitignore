@@ -1,0 +1,26 @@
+# Logs
+logs
+*.log*
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# IDEA
+.idea/
+tests/results-gulp/
+tests/results-node/
+tests/results-steroids/
+
+# temp
+tmp/
+
+# fs
+.DS_Store
+thumbs.db
+
+# workflow
+docs/
+examples/dist/
