@@ -32,7 +32,7 @@
   * let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
   *
   * @param {string} dataKey - the property key from the data object of the element
-  * @param {Selector} selector - search selector
+  * @param {jQuery.<Selector>} selector - search selector
   * @param {string} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`
   * @param {boolean} [notSelf] - ignore the current element, when searching for elements in `document` using the same selector as the current element
   * @return {jQuery.<Element>|undefined}

@@ -12,12 +12,116 @@
 
 > _Пользовательские jQuery методы_
 
+В основном, предназначены для использования с системой сборки `webpack`
+
 ## Установка
 
 ```shell
 npm i --save custom-jquery-methods
 # or using yarn cli
 yarn add custom-jquery-methods
+```
+
+## Методы
+
+Список методов
+
+- [addClassSiblingsRemove]()
+- [getMyElements]()
+- [hasInitedKey]()
+- [removeInitedKey]()
+
+### $.fn.addClassSiblingsRemove (cssClass _[, customPath]_)
+
+Добавление класса текущему элементу и удаление у смежных элементов
+
+###### Параметры:
+
+Name | Type | Attributes | Description
+--- | --- | --- | ---
+`cssClass` | `string` | | Класс который будет добавлен
+`customPath` | `Array.<string>` | `<optional>` | Пользовательский путь к смежным элементам
+
+###### Примеры:
+
+_example 1._ На одном уровне
+
+```js
+$('.item').addClassSiblingsRemove('is-active');
+```
+
+_example 2._ На одном уровне
+
+```js
+$('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
+```
+
+#### nodejs:
+
+```js
+// es6
+import 'custom-jquery-methods/fn/add-class-siblings-remove';
+
+// es5
+require('custom-jquery-methods/dist/add-class-siblings-remove');
+// or minimised version
+require('custom-jquery-methods/dist/add-class-siblings-remove.min');
+```
+
+#### browser / download:
+
+[https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js)
+[https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js)
+[https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js)
+
+
+
+
+
+
+
+### $.fn.getMyElements (dataKey, selector _[, direction][, notSelf]_)
+
+Поиск на странице или получение с даты нужного элемента.
+
+Сперва, смотрим в дата объект на определенное свойство.  
+Если здесь пусто - ищем элемент по указанному селектору в заданом направлении.  
+При нахождении, записываем его в дата объект, чтобы при последующих обращениях - получием с даты, быстрее и без поисков.
+
+___!!! Если в обращении элементов большего одного,___  
+___то метод выполняется только для первого___
+
+###### Параметры:
+
+Name | Type | Attributes | Default | Description
+--- | --- | --- | --- | ---
+`dataKey` | `string` | | | ключ свойства из data объекта элемента
+`selector` | `jQuery.<Selector>` | | | селектор поиска
+`direction` | `string` | `<optional>` | `"document"` | направление где искать - `[closest, parent, children, find, prev, next, siblings]`
+`notSelf` | `boolean` | `<optional>` |  | позволяет не учитывать себя (текущий `this`) при поиске элементов в `document` по такому же селектору, как у текущего элемента
+
+###### Возвращает:
+
+`jQuery.<Element> | undefined`
+
+###### Примеры:
+
+_example 1._ Поиск / получение вложенных элементов
+
+```js
+let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
+```
+
+_example 2._ Поиск / получение родительского элемента
+
+```js
+$('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
+```
+
+_example 3._ Поиск / получение похожих элементов за исключением текущего
+
+```js
+let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
 ```
 
 ---
