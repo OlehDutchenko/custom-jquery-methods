@@ -12,7 +12,7 @@
 
 > _Пользовательские jQuery методы_
 
-В основном, предназначены для использования с системой сборки `webpack`
+В основном, предназначены для использования с системой сборки `webpack`, также есть возмоность подключать методы по прямым ссылкам или скачать их (смотрите описание каждого из методов)
 
 ## Установка
 
@@ -26,10 +26,12 @@ yarn add custom-jquery-methods
 
 Список методов
 
-- [addClassSiblingsRemove]()
-- [getMyElements]()
+- [addClassSiblingsRemove](fnaddclasssiblingsremove-cssclass--custompath)
+- [getMyElements](fngetmyelements-datakey-selector--direction-notself)
 - [hasInitedKey]()
 - [removeInitedKey]()
+
+---
 
 ### $.fn.addClassSiblingsRemove (cssClass _[, customPath]_)
 
@@ -70,15 +72,15 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 #### browser / download:
 
-[https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js)
-[https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js)
-[https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js)
+- [https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js)
 
 
 
 
 
-
+---
 
 ### $.fn.getMyElements (dataKey, selector _[, direction][, notSelf]_)
 
@@ -123,6 +125,27 @@ _example 3._ Поиск / получение похожих элементов �
 ```js
 let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
 ```
+
+#### nodejs:
+
+```js
+// es6
+import 'custom-jquery-methods/fn/get-my-elements';
+
+// es5
+require('custom-jquery-methods/dist/get-my-elements');
+// or minimised version
+require('custom-jquery-methods/dist/get-my-elements.min');
+```
+
+#### browser / download:
+
+- [https://unpkg.com/custom-jquery-methods@latest/fn/get-my-elements.js](https://unpkg.com/custom-jquery-methods@latest/fn/get-my-elements.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.js](https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.min.js)
+
+
+
 
 ---
 
