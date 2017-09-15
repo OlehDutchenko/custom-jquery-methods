@@ -12,6 +12,8 @@
 
 > _Пользовательские jQuery методы_
 
+[![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
+
 В основном, предназначены для использования с системой сборки `webpack`, также есть возмоность подключать методы по прямым ссылкам или скачать их (смотрите описание каждого из методов)
 
 ## Установка
@@ -54,7 +56,7 @@ _example 1._ На одном уровне
 $('.item').addClassSiblingsRemove('is-active');
 ```
 
-_example 2._ На одном уровне
+_example 2._ На уровне родительских элементов
 
 ```js
 $('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
@@ -104,7 +106,7 @@ Name | Type | Attributes | Default | Description
 `dataKey` | `string` | | | ключ свойства из data объекта элемента
 `selector` | `jQuery.<Selector>` | | | селектор поиска
 `direction` | `string` | `<optional>` | `"document"` | направление где искать - `[closest, parent, children, find, prev, next, siblings]`
-`notSelf` | `boolean` | `<optional>` |  | позволяет не учитывать себя (текущий `this`) при поиске элементов в `document` по такому же селектору, как у текущего элемента
+`notSelf` | `boolean` | `<optional>` |  | позволяет не учитывать себя (текущий `this`) при поиске элементов, к примеру в `document` по такому же селектору, как у текущего элемента
 
 ###### Возвращает:
 

@@ -13,7 +13,7 @@
 
 (function (window, $) {
 	/**
-	 * Check for the existence of an initialization key
+	 * Check for the existence of an initialization key in `.data()`
 	 *
 	 * @example <caption>Check in cycle `.each()`</caption>
 	 * let initKey = 'my-key';
@@ -25,7 +25,7 @@
 	 *     // process current element
 	 * });
 	 *
-	 * @example <caption>Check single</caption>
+	 * @example <caption>Check for single element</caption>
 	 * let initKey = 'my-key';
 	 * let $myEl = $('.my-element');
 	 * if (!$myEl.hasInitedKey(initKey)) {
@@ -50,7 +50,7 @@
 	};
 
 	/**
-	 * Removing an initialization key
+	 * Removing an initialization key in `.data()`
 	 *
 	 * @example
 	 * let initKey = 'my-key';

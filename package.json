@@ -1,6 +1,6 @@
 {
   "name": "custom-jquery-methods",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Custom jQuery methods ($.fn)",
   "main": "index.js",
   "scripts": {
