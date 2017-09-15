@@ -29,11 +29,13 @@ yarn add custom-jquery-methods
 - [$.fn.addClassSiblingsRemove](#fnaddclasssiblingsremove-cssclass--custompath)
 - [$.fn.getMyElements](#fngetmyelements-datakey-selector--direction-notself)
 - [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
-- [$.fn.removeInitedKey]()
+- [$.fn.removeInitedKey](#fnremoveinitedkey-key)
 
 ---
 
 ### $.fn.addClassSiblingsRemove (cssClass _[, customPath]_)
+
+[↑ Список методов](#Методы)
 
 Добавление класса текущему элементу и удаление у смежных элементов
 
@@ -83,6 +85,8 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 ---
 
 ### $.fn.getMyElements (dataKey, selector _[, direction][, notSelf]_)
+
+[↑ Список методов](#Методы)
 
 Поиск на странице или получение с даты нужного элемента.
 
@@ -152,6 +156,8 @@ require('custom-jquery-methods/dist/get-my-elements.min');
 
 ### $.fn.hasInitedKey (key _[, setKey]_)
 
+[↑ Список методов](#Методы)
+
 Проверка на существование ключа инициализации в `.data()`.
 
 ###### Параметры:
@@ -216,6 +222,8 @@ require('custom-jquery-methods/dist/has-inited-key.min');
 
 ### $.fn.removeInitedKey (key)
 
+[↑ Список методов](#Методы)
+
 Удаление ключа инициализации в `.data()`.
 Метод является обратным действием для [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
 
@@ -227,31 +235,14 @@ Name | Type | Attributes | Default | Description
 
 ###### Возвращает:
 
-`boolean`
+`jQuery.<Element>` - this
 
 ###### Примеры:
-
-_example 1._ Проверка в цикле `.each()`
-
-```js
-let initKey = 'my-key';
-$('.my-elements').each((i, el) => {
-    let $element = $(el);
-    if ($element.hasInitedKey(initKey)) {
-        return true;
-    }
-    // process current element
-});
-```
-
-_example 2._ Проверка для одного элемента
 
 ```js
 let initKey = 'my-key';
 let $myEl = $('.my-elements');
-if (!$myEl.hasInitedKey(initKey)) {
-    // process current element
-}
+$myEl.removeInitedKey(initKey);
 ```
 
 #### nodejs /  browser / download:
