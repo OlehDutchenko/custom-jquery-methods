@@ -20,8 +20,8 @@
   * @example <caption>At the level of the parent elements</caption>
   * $('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
   *
-  * @param {string} cssClass
-  * @param {Array.<string>} [customPath]
+  * @param {string} cssClass - The class to be added
+  * @param {Array.<string>} [customPath] - Custom path to adjacent elements
   * @memberOf $.fn
   * @sourceCode
   */
