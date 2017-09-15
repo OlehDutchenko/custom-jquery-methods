@@ -14,7 +14,7 @@
 
 [![js happiness style](https://cdn.rawgit.com/JedWatson/happiness/master/badge.svg)](https://github.com/JedWatson/happiness)
 
-Basically, they are intended for use with the `webpack` bundler system, there is also the ability to connect methods via direct links in browser or download them (see description of each method)
+Basically, methods are intended for use with the `webpack` bundler system, there is also the ability to connect methods via direct links in browser or download them (see description of each method)
 
 ## Installations
 
