@@ -26,10 +26,10 @@ yarn add custom-jquery-methods
 
 Список методов
 
-- [addClassSiblingsRemove](fnaddclasssiblingsremove-cssclass--custompath)
-- [getMyElements](fngetmyelements-datakey-selector--direction-notself)
-- [hasInitedKey]()
-- [removeInitedKey]()
+- [$.fn.addClassSiblingsRemove](#fnaddclasssiblingsremove-cssclass--custompath)
+- [$.fn.getMyElements](#fngetmyelements-datakey-selector--direction-notself)
+- [$.fn.hasInitedKey]()
+- [$.fn.removeInitedKey]()
 
 ---
 
@@ -117,7 +117,7 @@ let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
 _example 2._ Поиск / получение родительского элемента
 
 ```js
-$('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
+let $wrapper = $('.els').getMyElements('$myWrapper', '.wrapper-selector', 'closest');
 ```
 
 _example 3._ Поиск / получение похожих элементов за исключением текущего
@@ -143,6 +143,70 @@ require('custom-jquery-methods/dist/get-my-elements.min');
 - [https://unpkg.com/custom-jquery-methods@latest/fn/get-my-elements.js](https://unpkg.com/custom-jquery-methods@latest/fn/get-my-elements.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.js](https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.min.js)
+
+
+
+
+
+---
+
+### $.fn.hasInitedKey (key _[, setKey]_)
+
+Проверка на существование ключа инициализации в `.data()`.
+
+###### Параметры:
+
+Name | Type | Attributes | Default | Description
+--- | --- | --- | --- | ---
+`key` | `string` | | | имя ключа
+`setKey` | `boolean` | `<optional>` | `true` | установить ключ, если не было
+
+###### Возвращает:
+
+`boolean`
+
+###### Примеры:
+
+_example 1._ Проверка в цикле `.each()`
+
+```js
+let initKey = 'my-key';
+$('.my-elements').each((i, el) => {
+    let $element = $(el);
+    if ($element.hasInitedKey(initKey)) {
+        return true;
+    }
+    // process current element
+});
+```
+
+_example 2._ Проверка для одного элемента
+
+```js
+let initKey = 'my-key';
+let $myEl = $('.my-elements');
+if (!$myEl.hasInitedKey(initKey)) {
+    // process current element
+}
+```
+
+#### nodejs:
+
+```js
+// es6
+import 'custom-jquery-methods/fn/has-inited-key';
+
+// es5
+require('custom-jquery-methods/dist/has-inited-key');
+// or minimised version
+require('custom-jquery-methods/dist/has-inited-key.min');
+```
+
+#### browser / download:
+
+- [https://unpkg.com/custom-jquery-methods@latest/fn/has-inited-key.js](https://unpkg.com/custom-jquery-methods@latest/fn/has-inited-key.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.js](https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.min.js)
 
 
 

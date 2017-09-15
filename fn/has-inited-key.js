@@ -15,21 +15,21 @@
 	/**
 	 * Check for the existence of an initialization key
 	 *
-	 * @example <caption>Check in cycle `each`</caption>
+	 * @example <caption>Check in cycle `.each()`</caption>
 	 * let initKey = 'my-key';
 	 * $('.my-elements').each((i, el) => {
-	 *  let $element = $(el);
-	 *  if ($element.hasInitedKey(initKey)) {
-	 *  	return true;
-	 *  }
-	 *  // process current element
+	 *     let $element = $(el);
+	 *     if ($element.hasInitedKey(initKey)) {
+	 *         return true;
+	 *     }
+	 *     // process current element
 	 * });
 	 *
 	 * @example <caption>Check single</caption>
 	 * let initKey = 'my-key';
 	 * let $myEl = $('.my-elements');
 	 * if (!$element.hasInitedKey(initKey)) {
-	 *  // process current element
+	 *     // process current element
 	 * }
 	 *
 	 * @param {string} key - key name
