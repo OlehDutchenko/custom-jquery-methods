@@ -54,12 +54,43 @@ _example 1._ На одном уровне
 
 ```js
 $('.item').addClassSiblingsRemove('is-active');
+
+// воспроизводить тоже что и 
+$('.item').addClass('is-active').siblings().removeClass('is-active');
 ```
 
-_example 2._ На уровне родительских элементов
+_example 2._ На уровне родительских элементов c параметров `customPath`
 
 ```js
 $('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
+
+// воспроизводить тоже что и 
+$('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
+```
+
+_example 3._ Также, `customPath` Позволяет использовать вычесленные значения в зависимости от ситуации и условий, которые могут быть нужны
+
+```js
+let customPath = ['parent', 'siblings', 'children'];
+if (condition1) {
+    customPath.unshift('parent');
+} else if (condition2) {
+    customPath = ['next'];
+} else if (condition3) {
+    customPath = ['prev'];
+}
+$('.item').addClassSiblingsRemove('is-active', customPath);
+
+// воспроизводить тоже что и 
+if (condition1) {
+    $('.item').addClass('is-active').parent().parent().siblings().children().removeClass('is-active');
+} else if (condition2) {
+    $('.item').addClass('is-active').next().removeClass('is-active');
+} else if (condition3) {
+    $('.item').addClass('is-active').prev().removeClass('is-active');
+} else {
+    $('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
+}
 ```
 
 #### nodejs:

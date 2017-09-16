@@ -54,12 +54,43 @@ _example 1._ On the same level
 
 ```js
 $('.item').addClassSiblingsRemove('is-active');
+
+// it will reproduce
+$('.item').addClass('is-active').siblings().removeClass('is-active');
 ```
 
-_example 2._ At the level of the parent elements
+_example 2._ At the level of the parent elements with `customPath` parameter
 
 ```js
 $('.item').addClassSiblingsRemove('is-active', ['parent', 'siblings', 'children']);
+
+// it will reproduce
+$('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
+```
+
+_example 3._ Also, `customPath` allows you to use a dynamically calculated path depending on the conditions you need
+
+```js
+let customPath = ['parent', 'siblings', 'children'];
+if (condition1) {
+    customPath.unshift('parent');
+} else if (condition2) {
+    customPath = ['next'];
+} else if (condition3) {
+    customPath = ['prev'];
+}
+$('.item').addClassSiblingsRemove('is-active', customPath);
+
+// it will reproduce
+if (condition1) {
+    $('.item').addClass('is-active').parent().parent().siblings().children().removeClass('is-active');
+} else if (condition2) {
+    $('.item').addClass('is-active').next().removeClass('is-active');
+} else if (condition3) {
+    $('.item').addClass('is-active').prev().removeClass('is-active');
+} else {
+    $('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
+}
 ```
 
 #### nodejs:

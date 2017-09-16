@@ -45,9 +45,9 @@
 
 		var $element = this.eq(0);
 		var keyIsSelector = typeof dataKey === 'string';
-		var $target = keyIsSelector ? $element.data(dataKey) : undefined;
+		var $target = keyIsSelector ? $element.data(dataKey) : '';
 
-		if ($target === undefined) {
+		if (!$target) {
 			if (direction === 'document') {
 				$target = $(selector);
 				if ($target.length && notSelf) {
@@ -60,7 +60,7 @@
 		}
 
 		if (!$target.length) {
-			$element.data(dataKey, undefined);
+			$element.data(dataKey, null);
 		}
 
 		return $target;
