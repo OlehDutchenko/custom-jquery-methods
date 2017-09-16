@@ -42,7 +42,7 @@
 	$.fn.getMyElements = function (dataKey, selector, direction = 'document', notSelf) {
 		let $element = this.eq(0);
 		let keyIsSelector = (typeof dataKey === 'string');
-		let $target = keyIsSelector ? $element.data(dataKey) : '';
+		let $target = keyIsSelector ? $element.data(dataKey) : null;
 
 		if (!$target) {
 			if (direction === 'document') {

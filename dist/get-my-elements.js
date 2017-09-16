@@ -45,7 +45,7 @@
 
 		var $element = this.eq(0);
 		var keyIsSelector = typeof dataKey === 'string';
-		var $target = keyIsSelector ? $element.data(dataKey) : '';
+		var $target = keyIsSelector ? $element.data(dataKey) : null;
 
 		if (!$target) {
 			if (direction === 'document') {
