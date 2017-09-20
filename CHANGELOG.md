@@ -13,7 +13,7 @@
 
 ## 1.1.0 [2017-09-20]
 
-- Add new method [`$.fn.nodeName()`](./README.md#fnnodename)
+- Add new method [`$.fn.nodeName()`](./README.md#fnnodename-)
 
 ---
 

@@ -28,7 +28,7 @@ yarn add custom-jquery-methods
 
 methods list
 
-- [$.fn.nodeName](#fnnodename)
+- [$.fn.nodeName](#fnnodename-)
 - [$.fn.addClassSiblingsRemove](#fnaddclasssiblingsremove-cssclass--custompath)
 - [$.fn.getMyElements](#fngetmyelements-datakey-selector--direction-notself)
 - [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
