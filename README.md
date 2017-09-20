@@ -38,7 +38,7 @@ methods list
 
 ### $.fn.nodeName ()
 
-[↑ Список методов](#Методы)
+[↑ methods list](#methods)
 
 Returns `nodeName` property of DOM element  in lowercase.  
 Useful when you can get unknown elements.
