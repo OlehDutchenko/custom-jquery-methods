@@ -28,10 +28,58 @@ yarn add custom-jquery-methods
 
 methods list
 
+- [$.fn.nodeName](#fnnodename)
 - [$.fn.addClassSiblingsRemove](#fnaddclasssiblingsremove-cssclass--custompath)
 - [$.fn.getMyElements](#fngetmyelements-datakey-selector--direction-notself)
 - [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
 - [$.fn.removeInitedKey](#fnremoveinitedkey-key)
+
+---
+
+### $.fn.nodeName ()
+
+[↑ Список методов](#Методы)
+
+Returns `nodeName` property of DOM element  in lowercase.  
+Useful when you can get unknown elements.
+
+###### Примеры:
+
+```js
+function myFunction ($el) {
+    switch ($el.nodeName()) {
+        case 'img':
+            // ...
+            break;
+        case 'div':
+            // ...
+            break;
+        case 'input':
+            // ...
+            break;
+        default:
+            // ...
+    }
+}
+```
+
+#### nodejs:
+
+```js
+// es6
+import 'custom-jquery-methods/fn/node-name';
+
+// es5
+require('custom-jquery-methods/dist/node-name');
+// or minimised version
+require('custom-jquery-methods/dist/node-name.min');
+```
+
+#### browser / download:
+
+- [https://unpkg.com/custom-jquery-methods@latest/fn/node-name.js](https://unpkg.com/custom-jquery-methods@latest/fn/node-name.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/node-name.js](https://unpkg.com/custom-jquery-methods@latest/dist/node-name.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/node-name.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/node-name.min.js)
 
 ---
 

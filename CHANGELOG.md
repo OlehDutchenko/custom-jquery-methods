@@ -11,6 +11,12 @@
 
 ---
 
+## 1.1.0 [2017-09-20]
+
+- Add new method [`$.fn.nodeName()`](./README.md#fnnodename)
+
+---
+
 ## 1.0.1 [2017-09-16]
 
 - Fix bug in `$.fn.getMyElements()` method

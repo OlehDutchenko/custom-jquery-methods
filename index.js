@@ -20,6 +20,7 @@
 // Imports
 // ----------------------------------------
 
+import './fn/node-name';
 import './fn/add-class-siblings-remove';
 import './fn/get-my-elements';
 import './fn/has-inited-key';
