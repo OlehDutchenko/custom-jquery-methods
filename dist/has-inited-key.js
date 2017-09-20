@@ -41,11 +41,9 @@
 	$.fn.hasInitedKey = function (key) {
 		var setKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
-		var $this = $(this);
-		var hasKey = !!$this.data(key);
-
+		var hasKey = !!this.data(key);
 		if (hasKey !== true && setKey) {
-			$this.data(key, true);
+			this.data(key, true);
 		}
 
 		return hasKey;

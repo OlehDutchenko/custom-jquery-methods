@@ -11,6 +11,13 @@
 
 ---
 
+## 1.1.1 [2017-09-20]
+
+- Correction in [`$.fn.hasInitedKey()`](./README.md#fnhasinitedkey-key--setkey) method 
+- Correction in README description
+
+---
+
 ## 1.1.0 [2017-09-20]
 
 - Add new method [`$.fn.nodeName()`](./README.md#fnnodename-)
@@ -19,5 +26,5 @@
 
 ## 1.0.1 [2017-09-16]
 
-- Fix bug in `$.fn.getMyElements()` method
+- Fix bug in [`$.fn.getMyElements()`](./README.md#fngetmyelements-datakey-selector--direction-notself) method
 - Add more usage examples

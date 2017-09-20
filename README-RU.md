@@ -67,7 +67,7 @@ function myFunction ($el) {
 
 ```js
 // es6
-import 'custom-jquery-methods/fn/node-name';
+import 'custom-jquery-methods/dist/node-name';
 
 // es5
 require('custom-jquery-methods/dist/node-name');
@@ -145,7 +145,7 @@ if (condition1) {
 
 ```js
 // es6
-import 'custom-jquery-methods/fn/add-class-siblings-remove';
+import 'custom-jquery-methods/dist/add-class-siblings-remove';
 
 // es5
 require('custom-jquery-methods/dist/add-class-siblings-remove');
@@ -215,7 +215,7 @@ let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
 
 ```js
 // es6
-import 'custom-jquery-methods/fn/get-my-elements';
+import 'custom-jquery-methods/dist/get-my-elements';
 
 // es5
 require('custom-jquery-methods/dist/get-my-elements');
@@ -281,7 +281,7 @@ if (!$myEl.hasInitedKey(initKey)) {
 
 ```js
 // es6
-import 'custom-jquery-methods/fn/has-inited-key';
+import 'custom-jquery-methods/dist/has-inited-key';
 
 // es5
 require('custom-jquery-methods/dist/has-inited-key');
