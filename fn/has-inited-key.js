@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * _Extend jQuery methods_
  * @module
@@ -12,6 +10,7 @@
 // ----------------------------------------
 
 (function (window, $) {
+	'use strict';
 	/**
 	 * Check for the existence of an initialization key in `.data()`
 	 *

@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * _Extend jQuery methods_
  * @module
@@ -11,6 +9,7 @@
 // ----------------------------------------
 
 (function (window, $) {
+	'use strict';
 	/**
   * Search on the page or retrieve from the date of the desired item.
   *
@@ -39,6 +38,7 @@
   * @memberOf $.fn
   * @sourceCode
   */
+
 	$.fn.getMyElements = function (dataKey, selector) {
 		var direction = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'document';
 		var notSelf = arguments[3];

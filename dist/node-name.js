@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * _Extend jQuery methods_
  * @module
@@ -11,6 +9,7 @@
 // ----------------------------------------
 
 (function (window, $) {
+	'use strict';
 	/**
   * Returns `nodeName` property of DOM element  in lowercase.
   * Useful when you can get unknown elements.
@@ -36,6 +35,7 @@
   * @memberOf $.fn
   * @sourceCode
   */
+
 	$.fn.nodeName = function () {
 		return this[0].nodeName.toLowerCase();
 	};

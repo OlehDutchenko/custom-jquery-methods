@@ -7,6 +7,7 @@
 const gulp = require('gulp');
 const jsdoc = require('gulp-jsdoc3');
 const babel = require('gulp-babel');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const del = require('del');
 
@@ -16,8 +17,20 @@ const del = require('del');
 
 const fnSrc = './fn/**/*.js';
 const fnDest = './dist';
-const docsSrc = ['./index.js', fnSrc];
+const docsSrc = fnSrc;
 const docsDest = './api-docs';
+
+const babelOptions = {
+	presets: ['es2015'],
+	plugins: ['transform-remove-strict-mode']
+};
+
+const uglifyOptions = {
+	mangle: true,
+	compress: {
+		warnings: true
+	}
+};
 
 const jsdocConfig = {
 	source: {
@@ -83,16 +96,21 @@ gulp.task('docs-watch', gulp.series('docs', function () {
 
 gulp.task('dist', function () {
 	return gulp.src(fnSrc)
-		.pipe(babel({
-			presets: ['es2015']
-		}))
+		.pipe(babel(babelOptions))
 		.pipe(gulp.dest(fnDest))
-		.pipe(uglify({
-			mangle: true,
-			compress: {
-				warnings: true
-			}
-		}))
+		.pipe(uglify(uglifyOptions))
+		.on('data', file => {
+			file.extname = '.min.js';
+		})
+		.pipe(gulp.dest(fnDest));
+});
+
+gulp.task('concat', function () {
+	return gulp.src(fnSrc)
+		.pipe(babel(babelOptions))
+		.pipe(concat('index.js'))
+		.pipe(gulp.dest(fnDest))
+		.pipe(uglify(uglifyOptions))
 		.on('data', file => {
 			file.extname = '.min.js';
 		})
@@ -102,3 +120,5 @@ gulp.task('dist', function () {
 gulp.task('dist-watch', gulp.series('dist', function () {
 	gulp.watch(fnSrc, gulp.series('dist'));
 }));
+
+gulp.task('default', gulp.series('docs', 'dist', 'concat'));

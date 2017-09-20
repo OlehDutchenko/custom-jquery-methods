@@ -1,4 +1,13 @@
-'use strict';
+/**
+ * jQuery library
+ * @namespace $
+ */
+
+/**
+ * jQuery prototype
+ * @namespace fn
+ * @memberOf $
+ */
 
 /**
  * _Extend jQuery methods_
@@ -11,6 +20,7 @@
 // ----------------------------------------
 
 (function (window, $) {
+	'use strict';
 	/**
   * Adding a class to the current element and deleting from adjacent elements
   *
@@ -53,6 +63,7 @@
   * @memberOf $.fn
   * @sourceCode
   */
+
 	$.fn.addClassSiblingsRemove = function (cssClass, customPath) {
 		return this.each(function (index, el) {
 			var $element = $(el);

@@ -34,6 +34,27 @@ yarn add custom-jquery-methods
 - [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
 - [$.fn.removeInitedKey](#fnremoveinitedkey-key)
 
+Вы можете подключить все методы одним файлом
+
+#### nodejs:
+
+```js
+// es6
+import 'custom-jquery-methods';
+// or minimised version
+import 'custom-jquery-methods/dist/index.min';
+
+// es5
+require('custom-jquery-methods');
+// or minimised version
+require('custom-jquery-methods/dist/index.min');
+```
+
+#### browser / download:
+
+- [https://unpkg.com/custom-jquery-methods@latest/dist/index.js](https://unpkg.com/custom-jquery-methods@latest/dist/index.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/index.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/index.min.js)
+
 ---
 
 ### $.fn.nodeName ()
@@ -68,6 +89,8 @@ function myFunction ($el) {
 ```js
 // es6
 import 'custom-jquery-methods/dist/node-name';
+// or minimised version
+import 'custom-jquery-methods/dist/node-name.min';
 
 // es5
 require('custom-jquery-methods/dist/node-name');
@@ -77,7 +100,6 @@ require('custom-jquery-methods/dist/node-name.min');
 
 #### browser / download:
 
-- [https://unpkg.com/custom-jquery-methods@latest/fn/node-name.js](https://unpkg.com/custom-jquery-methods@latest/fn/node-name.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/node-name.js](https://unpkg.com/custom-jquery-methods@latest/dist/node-name.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/node-name.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/node-name.min.js)
 
@@ -146,6 +168,8 @@ if (condition1) {
 ```js
 // es6
 import 'custom-jquery-methods/dist/add-class-siblings-remove';
+// or minimised version
+import 'custom-jquery-methods/dist/add-class-siblings-remove.min';
 
 // es5
 require('custom-jquery-methods/dist/add-class-siblings-remove');
@@ -155,7 +179,6 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 #### browser / download:
 
-- [https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/fn/add-class-siblings-remove.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js)
 
@@ -216,6 +239,8 @@ let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
 ```js
 // es6
 import 'custom-jquery-methods/dist/get-my-elements';
+// or minimised version
+import 'custom-jquery-methods/dist/get-my-elements.min';
 
 // es5
 require('custom-jquery-methods/dist/get-my-elements');
@@ -225,7 +250,6 @@ require('custom-jquery-methods/dist/get-my-elements.min');
 
 #### browser / download:
 
-- [https://unpkg.com/custom-jquery-methods@latest/fn/get-my-elements.js](https://unpkg.com/custom-jquery-methods@latest/fn/get-my-elements.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.js](https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/get-my-elements.min.js)
 
@@ -282,6 +306,8 @@ if (!$myEl.hasInitedKey(initKey)) {
 ```js
 // es6
 import 'custom-jquery-methods/dist/has-inited-key';
+// or minimised version
+import 'custom-jquery-methods/dist/has-inited-key.min';
 
 // es5
 require('custom-jquery-methods/dist/has-inited-key');
@@ -291,7 +317,6 @@ require('custom-jquery-methods/dist/has-inited-key.min');
 
 #### browser / download:
 
-- [https://unpkg.com/custom-jquery-methods@latest/fn/has-inited-key.js](https://unpkg.com/custom-jquery-methods@latest/fn/has-inited-key.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.js](https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/has-inited-key.min.js)
 

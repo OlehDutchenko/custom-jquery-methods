@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * _Extend jQuery methods_
  * @module
@@ -12,6 +10,7 @@
 // ----------------------------------------
 
 (function (window, $) {
+	'use strict';
 	/**
   * Check for the existence of an initialization key in `.data()`
   *
@@ -38,6 +37,7 @@
   * @memberOf $.fn
   * @sourceCode
   */
+
 	$.fn.hasInitedKey = function (key) {
 		var setKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 

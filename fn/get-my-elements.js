@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * _Extend jQuery methods_
  * @module
@@ -11,6 +9,7 @@
 // ----------------------------------------
 
 (function (window, $) {
+	'use strict';
 	/**
 	 * Search on the page or retrieve from the date of the desired item.
 	 *
