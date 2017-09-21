@@ -192,12 +192,12 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 [↑ methods list](#methods)
 
-Search on the page or retrieve from the date of the desired item.
+Search on the page or retrieve from the data of the desired item.
 
-First, look at the date object on a certain property.  
+First, look at the data object on a certain property.  
 If it is empty - look for the element on the specified selector in the given direction.
-When found, write it in the date object to
-at subsequent calls - we get from the date, faster and without searching.
+When found, write it in the data object to
+at subsequent calls - we get from the data, faster and without searching.
 
 ___!!! If called element more then one,___  
 ___then the method is performed only for the first___
