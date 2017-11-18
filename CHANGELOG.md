@@ -11,6 +11,12 @@
 
 ---
 
+## 1.2.2 [2017-11-18]
+
+- UPD jsdoc annotations
+
+---
+
 ## 1.2.1 [2017-09-21]
 
 - Fix typo in README

@@ -1,6 +1,6 @@
 {
   "name": "custom-jquery-methods",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Custom jQuery methods ($.fn)",
   "main": "./dist/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "gulp-jsdoc3": "^1.0.1",
     "gulp-uglify": "^3.0.0",
     "happiness": "^10.0.2",
-    "jsdoc-simple-theme": "^1.1.0",
+    "jsdoc-simple-theme": "^1.2.6",
     "snazzy": "^7.0.0"
   }
 }

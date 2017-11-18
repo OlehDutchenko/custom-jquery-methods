@@ -55,7 +55,7 @@
 	 * $myEl.removeInitedKey(initKey);
 	 *
 	 * @param {string} key - key name
-	 * @returns {jQuery.<Element>} this
+	 * @returns {jQuery} this
 	 * @memberOf $.fn
 	 * @sourceCode
 	 */

@@ -119,7 +119,7 @@
   * @param {Selector} selector - search selector
   * @param {string} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`
   * @param {boolean} [notSelf] - ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
-  * @return {jQuery.<Element>|undefined}
+  * @return {jQuery|undefined}
   * @memberOf $.fn
   * @sourceCode
   */
@@ -211,7 +211,7 @@
   * $myEl.removeInitedKey(initKey);
   *
   * @param {string} key - key name
-  * @returns {jQuery.<Element>} this
+  * @returns {jQuery} this
   * @memberOf $.fn
   * @sourceCode
   */

@@ -1,6 +1,7 @@
 /**
  * jQuery library
  * @namespace $
+ * @alias jQuery
  */
 
 /**
