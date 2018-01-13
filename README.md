@@ -42,7 +42,7 @@ You can include all methods by one file
 // es6
 import 'custom-jquery-methods';
 // or minimised version
-import 'custom-jquery-methods/dist/index.min';
+import 'custom-jquery-methods/fn/index.min';
 
 // es5
 require('custom-jquery-methods');
@@ -88,9 +88,9 @@ function myFunction ($el) {
 
 ```js
 // es6
-import 'custom-jquery-methods/dist/node-name';
+import 'custom-jquery-methods/fn/node-name';
 // or minimised version
-import 'custom-jquery-methods/dist/node-name.min';
+import 'custom-jquery-methods/fn/node-name.min';
 
 // es5
 require('custom-jquery-methods/dist/node-name');
@@ -167,9 +167,9 @@ if (condition1) {
 
 ```js
 // es6
-import 'custom-jquery-methods/dist/add-class-siblings-remove';
+import 'custom-jquery-methods/fn/add-class-siblings-remove';
 // or minimised version
-import 'custom-jquery-methods/dist/add-class-siblings-remove.min';
+import 'custom-jquery-methods/fn/add-class-siblings-remove.min';
 
 // es5
 require('custom-jquery-methods/dist/add-class-siblings-remove');
@@ -207,8 +207,8 @@ ___then the method is performed only for the first___
 Name | Type | Attributes | Default | Description
 --- | --- | --- | --- | ---
 `dataKey` | `string` | | | the property key from the data object of the element
-`selector` | `jQuery.<Selector>` | | | search selector
-`direction` | `string` | `<optional>` | `"document"` | direction where to look for - `[closest, parent, children, find, prev, next, siblings]`
+`selector` | `JQuery.Selector` | | | search selector
+`direction` | `string/JQuery` | `<optional>` | `"document"` | direction where to look for - `[closest, parent, children, find, prev, next, siblings]`, or can be jQuery element for find selector inside
 `notSelf` | `boolean` | `<optional>` |  | ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
 
 ###### Returns:
@@ -223,13 +223,20 @@ _example 1._ Find / retrieve nested items
 let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
 ```
 
-_example 2._ Finding / getting the parent element
+_example 2._ Find / retrieve nested items only in context block
+
+```js
+let $context = $('.demo');
+let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', $context);
+```
+	 
+_example 3._ Finding / getting the parent element
 
 ```js
 let $wrapper = $('.els').getMyElements('$myWrapper', '.wrapper-selector', 'closest');
 ```
 
-_example 3._ Search / retrieve similar items except for the current one
+_example 4._ Search / retrieve similar items except for the current one
 
 ```js
 let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
@@ -239,9 +246,9 @@ let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
 
 ```js
 // es6
-import 'custom-jquery-methods/dist/get-my-elements';
+import 'custom-jquery-methods/fn/get-my-elements';
 // or minimised version
-import 'custom-jquery-methods/dist/get-my-elements.min';
+import 'custom-jquery-methods/fn/get-my-elements.min';
 
 // es5
 require('custom-jquery-methods/dist/get-my-elements');
@@ -306,9 +313,9 @@ if (!$myEl.hasInitedKey(initKey)) {
 
 ```js
 // es6
-import 'custom-jquery-methods/dist/has-inited-key';
+import 'custom-jquery-methods/fn/has-inited-key';
 // or minimised version
-import 'custom-jquery-methods/dist/has-inited-key.min';
+import 'custom-jquery-methods/fn/has-inited-key.min';
 
 // es5
 require('custom-jquery-methods/dist/has-inited-key');

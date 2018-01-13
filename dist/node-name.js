@@ -1,13 +1,3 @@
-/**
- * _Extend jQuery methods_
- * @module
- * @see $.fn.nodeName
- */
-
-// ----------------------------------------
-// Public
-// ----------------------------------------
-
 (function (window, $) {
 	'use strict';
 	/**
@@ -31,8 +21,10 @@
   *     }
   * }
   *
+  * @global
+  * @name nodeName
+  * @this JQuery
   * @returns {string}
-  * @memberOf $.fn
   * @sourceCode
   */
 

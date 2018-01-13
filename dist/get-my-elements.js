@@ -1,13 +1,3 @@
-/**
- * _Extend jQuery methods_
- * @module
- * @see $.fn.getMyElements
- */
-
-// ----------------------------------------
-// Public
-// ----------------------------------------
-
 (function (window, $) {
 	'use strict';
 	/**
@@ -24,6 +14,10 @@
   * @example <caption>Find / retrieve nested items</caption>
   * let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
   *
+  * @example <caption>Find / retrieve nested items only in context block</caption>
+  * let $context = $('.demo');
+  * let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', $context);
+  *
   * @example <caption>Finding / getting the parent element</caption>
   * let $wrapper = $('.els').getMyElements('$myWrapper', '.wrapper-selector', 'closest');
   *
@@ -31,11 +25,13 @@
   * let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);
   *
   * @param {string} dataKey - the property key from the data object of the element
-  * @param {Selector} selector - search selector
-  * @param {string} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`
+  * @param {JQuery.Selector} selector - search selector
+  * @param {string|JQuery} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`, or can be jQuery element for find selector inside
   * @param {boolean} [notSelf] - ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
-  * @return {jQuery|undefined}
-  * @memberOf $.fn
+  *
+  * @global
+  * @name getMyElements
+  * @return {JQuery}
   * @sourceCode
   */
 
@@ -48,8 +44,12 @@
 		var $target = keyIsSelector ? $element.data(dataKey) : null;
 
 		if (!$target) {
-			if (direction === 'document') {
-				$target = $(selector);
+			if (direction === 'document' || direction && direction.jquery) {
+				if (direction.jquery) {
+					$target = direction.find(selector);
+				} else {
+					$target = $(selector);
+				}
 				if ($target.length && notSelf) {
 					$target = $target.not($element);
 				}

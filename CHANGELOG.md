@@ -11,9 +11,16 @@
 
 ---
 
+## 1.3.0 [2018-01-13]
+
+- UPD. jsdoc annotations
+- Enhanced `.getMyElements` method
+
+---
+
 ## 1.2.2 [2017-11-18]
 
-- UPD jsdoc annotations
+- UPD. jsdoc annotations
 
 ---
 

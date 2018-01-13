@@ -1,14 +1,3 @@
-/**
- * _Extend jQuery methods_
- * @module
- * @see $.fn.hasInitedKey
- * @see $.fn.removeInitedKey
- */
-
-// ----------------------------------------
-// Public
-// ----------------------------------------
-
 (function (window, $) {
 	'use strict';
 	/**
@@ -31,10 +20,12 @@
 	 *     // process current element
 	 * }
 	 *
+	 * @global
+	 * @name hasInitedKey
+	 * @this JQuery
 	 * @param {string} key - key name
 	 * @param {boolean} [setKey=true] - set the key, if not exist
 	 * @returns {boolean}
-	 * @memberOf $.fn
 	 * @sourceCode
 	 */
 	$.fn.hasInitedKey = function (key, setKey = true) {
@@ -54,9 +45,11 @@
 	 * let $myEl = $('.my-elements');
 	 * $myEl.removeInitedKey(initKey);
 	 *
+	 * @global
+	 * @name removeInitedKey
+	 * @this JQuery
 	 * @param {string} key - key name
-	 * @returns {jQuery} this
-	 * @memberOf $.fn
+	 * @returns {JQuery}
 	 * @sourceCode
 	 */
 	$.fn.removeInitedKey = function (key) {

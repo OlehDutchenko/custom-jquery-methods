@@ -206,8 +206,8 @@ ___то метод выполняется только для первого___
 Name | Type | Attributes | Default | Description
 --- | --- | --- | --- | ---
 `dataKey` | `string` | | | ключ свойства из data объекта элемента
-`selector` | `jQuery.<Selector>` | | | селектор поиска
-`direction` | `string` | `<optional>` | `"document"` | направление где искать - `[closest, parent, children, find, prev, next, siblings]`
+`selector` | `JQuery.Selector` | | | селектор поиска
+`direction` | `string/JQuery` | `<optional>` | `"document"` | направление где искать - `[closest, parent, children, find, prev, next, siblings]`, или может быть jQuery элементом для посика селекторов внутри
 `notSelf` | `boolean` | `<optional>` |  | позволяет не учитывать себя (текущий `this`) при поиске элементов, к примеру в `document` по такому же селектору, как у текущего элемента
 
 ###### Возвращает:
@@ -222,13 +222,20 @@ _example 1._ Поиск / получение вложенных элементо
 let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', 'find');
 ```
 
-_example 2._ Поиск / получение родительского элемента
+_example 2._ Поиск / получение вложенных элементов только внутри блока контекста
+
+```js
+let $context = $('.demo');
+let $els = $('.wrapper').getMyElements('$myEls', '.els-selector', $context);
+```
+
+_example 3._ Поиск / получение родительского элемента
 
 ```js
 let $wrapper = $('.els').getMyElements('$myWrapper', '.wrapper-selector', 'closest');
 ```
 
-_example 3._ Поиск / получение похожих элементов за исключением текущего
+_example 4._ Поиск / получение похожих элементов за исключением текущего
 
 ```js
 let $sameEls = $('.els').getMyElements('$mySameEls', '.els', 'document', true);

@@ -1,24 +1,3 @@
-/**
- * jQuery library
- * @namespace $
- */
-
-/**
- * jQuery prototype
- * @namespace fn
- * @memberOf $
- */
-
-/**
- * _Extend jQuery methods_
- * @module
- * @see $.fn.addClassSiblingsRemove
- */
-
-// ----------------------------------------
-// Public
-// ----------------------------------------
-
 (function (window, $) {
 	'use strict';
 	/**
@@ -58,9 +37,11 @@
   *     $('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
   * }
   *
+  * @global
+  * @name addClassSiblingsRemove
+  * @this JQuery
   * @param {string} cssClass - The class to be added
   * @param {Array.<string>} [customPath] - Custom path to adjacent elements
-  * @memberOf $.fn
   * @sourceCode
   */
 

@@ -15,9 +15,9 @@ const del = require('del');
 // Private
 // ----------------------------------------
 
-const fnSrc = './fn/**/*.js';
+const fnSrc = ['./fn/**/*.js', '!./fn/**/index.js'];
 const fnDest = './dist';
-const docsSrc = fnSrc;
+const docsSrc = './fn/**/*.js';
 const docsDest = './api-docs';
 
 const babelOptions = {
