@@ -1,4 +1,4 @@
-(function (window, $) {
+(function () {
 	'use strict';
 	/**
 	 * Adding a class to the current element and deleting from adjacent elements
@@ -37,16 +37,16 @@
 	 *     $('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
 	 * }
 	 *
-	 * @global
 	 * @name addClassSiblingsRemove
-	 * @this JQuery
+	 * @this jQuery
 	 * @param {string} cssClass - The class to be added
-	 * @param {Array.<string>} [customPath] - Custom path to adjacent elements
+	 * @param {string[]} [customPath] - Custom path to adjacent elements
 	 * @sourceCode
 	 */
-	$.fn.addClassSiblingsRemove = function (cssClass, customPath) {
+	jQuery.fn.addClassSiblingsRemove = function (cssClass, customPath) {
 		return this.each((index, el) => {
-			let $element = $(el);
+			/** @type {jQuery} */
+			const $element = $(el);
 			let $siblings;
 
 			if (Array.isArray(customPath) && customPath.length) {
@@ -62,4 +62,4 @@
 			$siblings.removeClass(cssClass);
 		});
 	};
-})(window, window.jQuery);
+})();
