@@ -38,8 +38,9 @@
 	 * @sourceCode
 	 */
 	jQuery.fn.getMyElements = function (dataKey, selector, direction = 'document', notSelf) {
-		let $element = this.eq(0);
-		let keyIsSelector = (typeof dataKey === 'string');
+		/** @type {jQuery} */
+		const $element = this.eq(0);
+		const keyIsSelector = (typeof dataKey === 'string');
 		let $target = keyIsSelector ? $element.data(dataKey) : null;
 
 		if (!$target) {
@@ -47,7 +48,7 @@
 				if (direction.jquery) {
 					$target = direction.find(selector);
 				} else {
-					$target = $(selector);
+					$target = jQuery(selector);
 				}
 				if ($target.length && notSelf) {
 					$target = $target.not($element);

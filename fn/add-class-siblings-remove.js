@@ -46,7 +46,7 @@
 	jQuery.fn.addClassSiblingsRemove = function (cssClass, customPath) {
 		return this.each((index, el) => {
 			/** @type {jQuery} */
-			const $element = $(el);
+			const $element = jQuery(el);
 			let $siblings;
 
 			if (Array.isArray(customPath) && customPath.length) {

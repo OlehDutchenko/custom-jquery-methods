@@ -28,7 +28,7 @@
 	 * @sourceCode
 	 */
 	jQuery.fn.hasInitedKey = function (key, setKey = true) {
-		let hasKey = !!this.data(key);
+		const hasKey = !!this.data(key);
 		if (hasKey !== true && setKey) {
 			this.data(key, true);
 		}
@@ -52,7 +52,7 @@
 	 */
 	jQuery.fn.removeInitedKey = function (key) {
 		return this.each((index, el) => {
-			$(el).data(key, null);
+			jQuery(el).data(key, null);
 		});
 	};
 })();
