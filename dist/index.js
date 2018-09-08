@@ -1,4 +1,4 @@
-(function (window, $) {
+(function () {
 	'use strict';
 	/**
   * Adding a class to the current element and deleting from adjacent elements
@@ -37,17 +37,17 @@
   *     $('.item').addClass('is-active').parent().siblings().children().removeClass('is-active');
   * }
   *
-  * @global
   * @name addClassSiblingsRemove
-  * @this JQuery
+  * @this jQuery
   * @param {string} cssClass - The class to be added
-  * @param {Array.<string>} [customPath] - Custom path to adjacent elements
+  * @param {string[]} [customPath] - Custom path to adjacent elements
   * @sourceCode
   */
 
-	$.fn.addClassSiblingsRemove = function (cssClass, customPath) {
+	jQuery.fn.addClassSiblingsRemove = function (cssClass, customPath) {
 		return this.each(function (index, el) {
-			var $element = $(el);
+			/** @type {jQuery} */
+			var $element = jQuery(el);
 			var $siblings = void 0;
 
 			if (Array.isArray(customPath) && customPath.length) {
@@ -63,8 +63,8 @@
 			$siblings.removeClass(cssClass);
 		});
 	};
-})(window, window.jQuery);
-(function (window, $) {
+})();
+(function () {
 	'use strict';
 	/**
   * Search on the page or retrieve from the date of the desired item.
@@ -95,16 +95,20 @@
   * @param {string|JQuery} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`, or can be jQuery element for find selector inside
   * @param {boolean} [notSelf] - ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
   *
-  * @global
   * @name getMyElements
-  * @return {JQuery}
+  * @param {string} dataKey
+  * @param {string} selector
+  * @param {string|jQuery} [direction='document']
+  * @param {boolean} [direction='document']
+  * @return {jQuery}
   * @sourceCode
   */
 
-	$.fn.getMyElements = function (dataKey, selector) {
+	jQuery.fn.getMyElements = function (dataKey, selector) {
 		var direction = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'document';
 		var notSelf = arguments[3];
 
+		/** @type {jQuery} */
 		var $element = this.eq(0);
 		var keyIsSelector = typeof dataKey === 'string';
 		var $target = keyIsSelector ? $element.data(dataKey) : null;
@@ -114,7 +118,7 @@
 				if (direction.jquery) {
 					$target = direction.find(selector);
 				} else {
-					$target = $(selector);
+					$target = jQuery(selector);
 				}
 				if ($target.length && notSelf) {
 					$target = $target.not($element);
@@ -131,8 +135,8 @@
 
 		return $target;
 	};
-})(window, window.jQuery);
-(function (window, $) {
+})();
+(function () {
 	'use strict';
 	/**
   * Check for the existence of an initialization key in `.data()`
@@ -154,16 +158,15 @@
   *     // process current element
   * }
   *
-  * @global
   * @name hasInitedKey
-  * @this JQuery
+  * @this jQuery
   * @param {string} key - key name
   * @param {boolean} [setKey=true] - set the key, if not exist
   * @returns {boolean}
   * @sourceCode
   */
 
-	$.fn.hasInitedKey = function (key) {
+	jQuery.fn.hasInitedKey = function (key) {
 		var setKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
 		var hasKey = !!this.data(key);
@@ -182,20 +185,19 @@
   * let $myEl = $('.my-elements');
   * $myEl.removeInitedKey(initKey);
   *
-  * @global
   * @name removeInitedKey
-  * @this JQuery
+  * @this jQuery
   * @param {string} key - key name
-  * @returns {JQuery}
+  * @returns {jQuery}
   * @sourceCode
   */
-	$.fn.removeInitedKey = function (key) {
+	jQuery.fn.removeInitedKey = function (key) {
 		return this.each(function (index, el) {
-			$(el).data(key, null);
+			jQuery(el).data(key, null);
 		});
 	};
-})(window, window.jQuery);
-(function (window, $) {
+})();
+(function () {
 	'use strict';
 	/**
   * Returns `nodeName` property of DOM element  in lowercase.
@@ -218,14 +220,13 @@
   *     }
   * }
   *
-  * @global
   * @name nodeName
-  * @this JQuery
+  * @this jQuery
   * @returns {string}
   * @sourceCode
   */
 
-	$.fn.nodeName = function () {
+	jQuery.fn.nodeName = function () {
 		return this[0].nodeName.toLowerCase();
 	};
-})(window, window.jQuery);
+})();

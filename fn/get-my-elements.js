@@ -1,4 +1,4 @@
-(function (window, $) {
+(function () {
 	'use strict';
 	/**
 	 * Search on the page or retrieve from the date of the desired item.
@@ -29,14 +29,18 @@
 	 * @param {string|JQuery} [direction="document"] - direction where to look for - `[closest, parent, children, find, prev, next, siblings]`, or can be jQuery element for find selector inside
 	 * @param {boolean} [notSelf] - ignore the current element, when searching for elements, for example in `document` using the same selector as the current element
 	 *
-	 * @global
 	 * @name getMyElements
-	 * @return {JQuery}
+	 * @param {string} dataKey
+	 * @param {string} selector
+	 * @param {string|jQuery} [direction='document']
+	 * @param {boolean} [direction='document']
+	 * @return {jQuery}
 	 * @sourceCode
 	 */
-	$.fn.getMyElements = function (dataKey, selector, direction = 'document', notSelf) {
-		let $element = this.eq(0);
-		let keyIsSelector = (typeof dataKey === 'string');
+	jQuery.fn.getMyElements = function (dataKey, selector, direction = 'document', notSelf) {
+		/** @type {jQuery} */
+		const $element = this.eq(0);
+		const keyIsSelector = (typeof dataKey === 'string');
 		let $target = keyIsSelector ? $element.data(dataKey) : null;
 
 		if (!$target) {
@@ -44,7 +48,7 @@
 				if (direction.jquery) {
 					$target = direction.find(selector);
 				} else {
-					$target = $(selector);
+					$target = jQuery(selector);
 				}
 				if ($target.length && notSelf) {
 					$target = $target.not($element);
@@ -61,4 +65,4 @@
 
 		return $target;
 	};
-})(window, window.jQuery);
+})();

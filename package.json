@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp",
     "api-docs": "gulp docs",
-    "test": "happiness \"./index.js\" \"./fn/**/*.js\" --verbose --fix | snazzy"
+    "test": "happiness \"./index.js\" \"./fn/**/*.js\" --verbose --fix --global jQuery | snazzy"
   },
   "repository": {
     "type": "git",
