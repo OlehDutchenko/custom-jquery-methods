@@ -1,4 +1,4 @@
-(function (window, $) {
+(function () {
 	'use strict';
 	/**
 	 * Returns `nodeName` property of DOM element  in lowercase.
@@ -21,13 +21,12 @@
 	 *     }
 	 * }
 	 *
-	 * @global
 	 * @name nodeName
-	 * @this JQuery
+	 * @this jQuery
 	 * @returns {string}
 	 * @sourceCode
 	 */
-	$.fn.nodeName = function () {
+	jQuery.fn.nodeName = function () {
 		return this[0].nodeName.toLowerCase();
 	};
-})(window, window.jQuery);
+})();

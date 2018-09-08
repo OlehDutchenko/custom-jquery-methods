@@ -1,12 +1,12 @@
 {
   "name": "custom-jquery-methods",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Custom jQuery methods ($.fn)",
   "main": "./fn/index.js",
   "scripts": {
     "build": "gulp",
     "api-docs": "gulp docs",
-    "test": "happiness \"./index.js\" \"./fn/**/*.js\" --verbose --fix | snazzy"
+    "test": "happiness \"./index.js\" \"./fn/**/*.js\" --verbose --fix --global jQuery | snazzy"
   },
   "repository": {
     "type": "git",

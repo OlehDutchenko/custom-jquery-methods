@@ -1,4 +1,4 @@
-(function (window, $) {
+(function () {
 	'use strict';
 	/**
   * Check for the existence of an initialization key in `.data()`
@@ -20,16 +20,15 @@
   *     // process current element
   * }
   *
-  * @global
   * @name hasInitedKey
-  * @this JQuery
+  * @this jQuery
   * @param {string} key - key name
   * @param {boolean} [setKey=true] - set the key, if not exist
   * @returns {boolean}
   * @sourceCode
   */
 
-	$.fn.hasInitedKey = function (key) {
+	jQuery.fn.hasInitedKey = function (key) {
 		var setKey = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
 
 		var hasKey = !!this.data(key);
@@ -48,16 +47,15 @@
   * let $myEl = $('.my-elements');
   * $myEl.removeInitedKey(initKey);
   *
-  * @global
   * @name removeInitedKey
-  * @this JQuery
+  * @this jQuery
   * @param {string} key - key name
-  * @returns {JQuery}
+  * @returns {jQuery}
   * @sourceCode
   */
-	$.fn.removeInitedKey = function (key) {
+	jQuery.fn.removeInitedKey = function (key) {
 		return this.each(function (index, el) {
-			$(el).data(key, null);
+			jQuery(el).data(key, null);
 		});
 	};
-})(window, window.jQuery);
+})();
