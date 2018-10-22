@@ -31,7 +31,7 @@ methods list
 
 - [`$.fn.nodeName()`](#fnnodename-)
 - [`$.fn.addClassSiblingsRemove()`](#fnaddclasssiblingsremove-cssclass--custompath)
-- [`$.fn.changeMyClass()`](#fnchangemyclass)
+- [`$.fn.changeMyClass()`](#fnchangemyclass-condition-previouslyadded-classname)
 - [`$.fn.getMyElements()`](#fngetmyelements-datakey-selector--direction-notself)
 - [`$.fn.hasInitedKey()`](#fnhasinitedkey-key--setkey)
 - [`$.fn.removeInitedKey()`](#fnremoveinitedkey-key)
@@ -190,8 +190,8 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 [↑ methods list](#methods)
 
-Add `className` if previously was removed,  
-remove `className` if previously was added.
+Add `className` if previously was removed.  
+Remove `className` if previously was added.
 
 
 Returns `boolean` - className was added or not!

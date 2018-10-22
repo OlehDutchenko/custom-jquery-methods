@@ -11,10 +11,16 @@
 
 ---
 
+## 1.5.0 [2018-10-23]
+
+- new method `.changeMyClass()` method
+
+---
+
 ## 1.3.0 [2018-01-13]
 
 - UPD. jsdoc annotations
-- Enhanced `.getMyElements` method
+- Enhanced `.getMyElements()` method
 
 ---
 

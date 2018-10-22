@@ -1,8 +1,9 @@
 # custom-jquery-methods
 
-![npm](https://img.shields.io/badge/node-6.3.1-yellow.svg)
+![node](https://img.shields.io/badge/node-6.3.1-yellow.svg)
 ![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
-![license](https://img.shields.io/badge/License-MIT-orange.svg)
+[![license](https://img.shields.io/badge/License-MIT-orange.svg)](https://github.com/dutchenkoOleg/custom-jquery-methods/blob/master/LICENSE)
+[![npm](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/custom-jquery-methods)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/custom-jquery-methods.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/custom-jquery-methods)
 
 
@@ -28,11 +29,12 @@ yarn add custom-jquery-methods
 
 Список методов
 
-- [$.fn.nodeName](#fnnodename-)
-- [$.fn.addClassSiblingsRemove](#fnaddclasssiblingsremove-cssclass--custompath)
-- [$.fn.getMyElements](#fngetmyelements-datakey-selector--direction-notself)
-- [$.fn.hasInitedKey](#fnhasinitedkey-key--setkey)
-- [$.fn.removeInitedKey](#fnremoveinitedkey-key)
+- [`$.fn.nodeName()`](#fnnodename-)
+- [`$.fn.addClassSiblingsRemove()`](#fnaddclasssiblingsremove-cssclass--custompath)
+- [`$.fn.changeMyClass()`](#fnchangemyclass-condition-previouslyadded-classname)
+- [`$.fn.getMyElements()`](#fngetmyelements-datakey-selector--direction-notself)
+- [`$.fn.hasInitedKey()`](#fnhasinitedkey-key--setkey)
+- [`$.fn.removeInitedKey()`](#fnremoveinitedkey-key)
 
 Вы можете подключить все методы одним файлом
 
@@ -181,6 +183,63 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 - [https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.js)
 - [https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/add-class-siblings-remove.min.js)
+
+---
+
+### $.fn.changeMyClass (condition, previouslyAdded, className)
+
+[↑ methods list](#methods)
+
+Добавить `className` если ранее был удален / отсутствовал.  
+Удалить `className` если ранее был добавлен.
+
+
+Метод возвращает `boolean` - className был добавлен или нет!
+
+###### Parameters:
+
+Name | Type | Attributes | Description
+--- | --- | --- | ---
+`needToAdd` | `boolean` | | добавить className ?
+`previouslyAdded` | `boolean` | | className был ранее добавлен или нет 
+`className` | `string / string[] / function` | | см. [api.jquery.com/addClass](http://api.jquery.com/addClass/) и [api.jquery.com/removeClass](http://api.jquery.com/removeClass/)
+
+###### Пример использования:
+
+```js
+/**
+ * @param {jQuery} $section
+ * @param {jQuery} $frontier
+ */
+function showSection ($section, $frontier) {
+    const $window = $(window);
+    let previouslyAdded = $section.hasClass('show'); // <--
+    $window.on('scroll', () => {
+        const top = $window.scrollTop();
+        const height = $frontier.offset().top + $frontier.outerHeight();
+        previouslyAdded = $section.changeMyClass(top > height, previouslyAdded, 'show');  // <--
+    });
+}
+```
+
+#### nodejs:
+
+```js
+// es6
+import 'custom-jquery-methods/fn/change-my-class';
+// or minimised version
+import 'custom-jquery-methods/fn/change-my-class.min';
+
+// es5
+require('custom-jquery-methods/dist/change-my-class');
+// or minimised version
+require('custom-jquery-methods/dist/change-my-class.min');
+```
+
+#### browser / download:
+
+- [https://unpkg.com/custom-jquery-methods@latest/dist/change-my-class.js](https://unpkg.com/custom-jquery-methods@latest/dist/change-my-class.js)
+- [https://unpkg.com/custom-jquery-methods@latest/dist/change-my-class.min.js](https://unpkg.com/custom-jquery-methods@latest/dist/change-my-class.min.js)
 
 
 
