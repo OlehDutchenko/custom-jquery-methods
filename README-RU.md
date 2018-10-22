@@ -31,7 +31,7 @@ yarn add custom-jquery-methods
 
 - [`$.fn.nodeName()`](#fnnodename-)
 - [`$.fn.addClassSiblingsRemove()`](#fnaddclasssiblingsremove-cssclass--custompath)
-- [`$.fn.changeMyClass()`](#fnchangemyclass-condition-previouslyadded-classname)
+- [`$.fn.changeMyClass()`](#fnchangemyclass-condition-previouslyadded-classname--onchange)
 - [`$.fn.getMyElements()`](#fngetmyelements-datakey-selector--direction-notself)
 - [`$.fn.hasInitedKey()`](#fnhasinitedkey-key--setkey)
 - [`$.fn.removeInitedKey()`](#fnremoveinitedkey-key)
@@ -186,7 +186,7 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 ---
 
-### $.fn.changeMyClass (condition, previouslyAdded, className)
+### $.fn.changeMyClass (condition, previouslyAdded, className[, onChange])
 
 [↑ methods list](#methods)
 
@@ -203,6 +203,7 @@ Name | Type | Attributes | Description
 `needToAdd` | `boolean` | | добавить className ?
 `previouslyAdded` | `boolean` | | className был ранее добавлен или нет 
 `className` | `string / string[] / function` | | см. [api.jquery.com/addClass](http://api.jquery.com/addClass/) и [api.jquery.com/removeClass](http://api.jquery.com/removeClass/)
+`onChange` | `function` | `<optional>` |
 
 ###### Пример использования:
 

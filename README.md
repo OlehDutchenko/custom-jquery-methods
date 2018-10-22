@@ -31,7 +31,7 @@ methods list
 
 - [`$.fn.nodeName()`](#fnnodename-)
 - [`$.fn.addClassSiblingsRemove()`](#fnaddclasssiblingsremove-cssclass--custompath)
-- [`$.fn.changeMyClass()`](#fnchangemyclass-condition-previouslyadded-classname)
+- [`$.fn.changeMyClass()`](#fnchangemyclass-condition-previouslyadded-classname--onchange)
 - [`$.fn.getMyElements()`](#fngetmyelements-datakey-selector--direction-notself)
 - [`$.fn.hasInitedKey()`](#fnhasinitedkey-key--setkey)
 - [`$.fn.removeInitedKey()`](#fnremoveinitedkey-key)
@@ -186,7 +186,7 @@ require('custom-jquery-methods/dist/add-class-siblings-remove.min');
 
 ---
 
-### $.fn.changeMyClass (condition, previouslyAdded, className)
+### $.fn.changeMyClass (condition, previouslyAdded, className[, onChange])
 
 [↑ methods list](#methods)
 
@@ -203,6 +203,7 @@ Name | Type | Attributes | Description
 `needToAdd` | `boolean` | | add className ?
 `previouslyAdded` | `boolean` | | was className previously added or not 
 `className` | `string / string[] / function` | | see [api.jquery.com/addClass](http://api.jquery.com/addClass/) and [api.jquery.com/removeClass](http://api.jquery.com/removeClass/)
+`onChange` | `function` | `<optional>` |
 
 ###### Usage example:
 

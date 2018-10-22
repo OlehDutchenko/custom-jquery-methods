@@ -11,9 +11,10 @@
 
 ---
 
-## 1.5.0 [2018-10-23]
+## 1.5.0, 1.6.0 [2018-10-23]
 
-- new method `.changeMyClass()` method
+- New method `.changeMyClass()` method
+- Enhanced `.changeMyClass()` method
 
 ---
 
