@@ -2,6 +2,7 @@
 
 ![node](https://img.shields.io/badge/node-6.3.1-yellow.svg)
 ![es2015](https://img.shields.io/badge/ECMAScript-2015_(ES6)-blue.svg)
+![types](https://img.shields.io/badge/types-TypeScript-blue)
 [![license](https://img.shields.io/badge/License-MIT-orange.svg)](https://github.com/dutchenkoOleg/custom-jquery-methods/blob/master/LICENSE)
 [![npm](https://img.shields.io/badge/npm-install-orange.svg)](https://www.npmjs.com/package/custom-jquery-methods)
 [![Build Status](https://travis-ci.org/dutchenkoOleg/custom-jquery-methods.svg?branch=master)](https://travis-ci.org/dutchenkoOleg/custom-jquery-methods)
